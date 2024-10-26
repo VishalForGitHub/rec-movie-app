@@ -1,0 +1,13 @@
+.movie-grid{
+    display: flex;
+    justify-content: space-around;
+    text-align: center;
+    flex-wrap: wrap;
+    margin-top:20px;
+}
+
+@media(max-width:700px) {
+    .movie-grid{
+        margin-top: 60px;
+    }
+}
