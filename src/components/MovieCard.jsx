@@ -4,11 +4,11 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import '../styles/movieCard.css';
 
-const MovieCard = ({ movie }) => {
-  const id=movie.node.id;
-  const title=movie.node.originalTitleText.text;
-  const poster_path=movie.node.primaryImage.url;
-  const rating=movie.node.ratingsSummary.aggregateRating;
+const MovieCard = ({ id,title,poster_path,rating=9}) => {
+  // const id=movie.node.id;
+  // const title=movie.node.originalTitleText.text;
+  // const poster_path=movie.node.primaryImage.url;
+  // const rating=movie.node.ratingsSummary.aggregateRating;
   
   
 

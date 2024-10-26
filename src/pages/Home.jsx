@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
-import '../styles/home.css'
-import { options } from '../services/movieService';
+import '../styles/common.css'
+import { popular } from '../services/movieService';
 import MovieCard from '../components/MovieCard';  // Assuming you have a MovieCard component
 import axios from 'axios';
 
@@ -8,9 +8,9 @@ const Home = () => {
   const [movies, setMovies] = useState([]);
 
   useEffect(() => {
-    axios.request(options)
+    axios.request(popular)
       .then(response => {
-        let dummy = [];
+        // let dummy = [];
         // dummy.push(response.data.data.mainSearch.edges[0].node.entity.id);
         // dummy.push(response.data.data.mainSearch.edges[0].node.entity.originalTitleText.text);
         // dummy.push(response.data.data.mainSearch.edges[0].node.entity.primaryImage.url);
@@ -22,7 +22,6 @@ const Home = () => {
       })
       .catch(error => {
         console.error("Error fetching popular movies:", error);
-
       });
   }, []);
 
@@ -31,7 +30,7 @@ const Home = () => {
 
       <div className="movie-grid">
         {movies.map(movie => (
-          <MovieCard key={movie.node.id} movie={movie} />
+          <MovieCard key={movie.node.id} id={movie.node.id}  title={movie.node.originalTitleText.text} poster_path={movie.node.primaryImage.url} rating={movie.node.ratingsSummary.aggregateRating} />
         ))}
       </div>
 
