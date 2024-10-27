@@ -23,9 +23,7 @@ const MovieDetail = () => {
         const fetchData2 = async () => {
             try {
                 const res = await getCastDetails(id);
-                // setMovieDetails(res.);
                 setCastDetails(res.slice(0, 6));
-                // console.log(res.slice(0, 6));
             } catch (error) {
                 console.error("Error fetching data1:", error);
             }
@@ -66,7 +64,6 @@ const MovieDetail = () => {
 
                         castDetails.map((cast) => (
                             <Casts cast={cast}/>
-                            // <p>{cast.name} hello</p>
                         ))
                         : <p>Loding.../Error</p>
                     

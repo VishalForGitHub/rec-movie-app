@@ -11,7 +11,6 @@ const Upcoming = () => {
         axios.request(upcoming)
             .then(response => {
                 setMovies(response.data.data.topMeterTitles.edges);
-                // console.log(response.data.data.topMeterTitles.edges);
             })
             .catch(error => {
                 console.error("Error fetching popular movies:", error);

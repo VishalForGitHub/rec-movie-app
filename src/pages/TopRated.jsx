@@ -11,7 +11,6 @@ const TopRated = () => {
         axios.request(topRated)
             .then(response => {
                 setMovies(response.data.data.mainSearch.edges);
-                // console.log(response.data.data.mainSearch.edges);
             })
             .catch(error => {
                 console.error("Error fetching popular movies:", error);

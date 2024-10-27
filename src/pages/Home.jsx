@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import '../styles/common.css'
 import { popular } from '../services/movieService';
-import MovieCard from '../components/MovieCard';  // Assuming you have a MovieCard component
+import MovieCard from '../components/MovieCard';  
 import axios from 'axios';
 
 const Home = () => {

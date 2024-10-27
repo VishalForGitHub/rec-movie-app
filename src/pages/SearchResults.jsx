@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import '../styles/common.css'
 import { searchMovieByName } from '../services/movieService';
-import MovieCard from '../components/MovieCard';  // Assuming you have a MovieCard component
+import MovieCard from '../components/MovieCard'; 
 import axios from 'axios';
 import { useParams } from 'react-router-dom';
 
