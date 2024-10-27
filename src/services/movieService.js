@@ -4,7 +4,7 @@ const API_KEY = '2c7a43366dmshbc53fb5cc708817p1a18c5jsn1cc24a6755ee';
 //tani: '2c7a43366dmshbc53fb5cc708817p1a18c5jsn1cc24a6755ee';
 //my: '8d6f75e5c3msh26855937d514038p1793a5jsna4e21d4df0da';
 //shu: 843a6ee35amsh7dd72dd57a3f986p111526jsn01dce883
-// export const delay = (ms) => new Promise(resolve => setTimeout(resolve, ms));
+
 
 
 export const popular = {
