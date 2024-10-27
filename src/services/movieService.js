@@ -102,7 +102,6 @@ export async function searchMovieByName(movieName) {
   }
 }
 
-// searchMovieByName('venom');
 
 export async function getCastDetails(movieId) {
   try {
