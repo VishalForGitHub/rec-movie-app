@@ -30,7 +30,7 @@ export const topRated = {
   params: {
     searchTerm: 'top rated',
     type: 'NAME',
-    first: '15',
+    first: '8',
     country: 'US',
     language: 'en-US'
   },
