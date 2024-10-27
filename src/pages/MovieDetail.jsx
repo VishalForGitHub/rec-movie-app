@@ -1,32 +1,48 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import '../styles/movieDetail.css';
-import axios from 'axios';
+import Casts from '../components/Casts';
 import { fetchMovieDetailsById } from '../services/movieService';
+import { getCastDetails } from '../services/movieService';
 const MovieDetail = () => {
     const { id } = useParams();
     // id= id.match(/ttd+/)[0];
 
     // const str = "/title/tt16366836/";
-    console.log(id); // Output: "tt16366836"
+    // console.log(id); // Output: "tt16366836"
 
     const [movieDetails, setMovieDetails] = useState(null);
-
+    const [castDetails, setCastDetails] = useState(null);
     useEffect(() => {
 
-
-        fetchMovieDetailsById(id).
-            then((res) => {
+        const fetchData1 = async () => {
+            try {
+                const res = await fetchMovieDetailsById(id);
                 setMovieDetails(res.data);
-            }).
-            catch(err => console.log(err));
+            } catch (error) {
+                console.error("Error fetching data1:", error);
+            }
+        };
 
 
+        const fetchData2 = async () => {
+            try {
+                const res = await getCastDetails(id);
+                // setMovieDetails(res.);
+                setCastDetails(res.slice(0, 6));
+                console.log(res.slice(0, 6));
+            } catch (error) {
+                console.error("Error fetching data1:", error);
+            }
+        };
+
+        fetchData1();
+        fetchData2();
     }, []);
 
 
     if (!movieDetails) {
-        return <div style={{textAlign:'center'}}><h2>Loading...</h2></div>;
+        return <div style={{ textAlign: 'center' }}><h2>Loading...</h2></div>;
     }
 
     return (
@@ -40,17 +56,22 @@ const MovieDetail = () => {
                 />
                 <div className="movie-info">
                     <h2>{movieDetails.data.title.originalTitleText.text}</h2>
-                    <p>Rating: {8.8}</p>
+                    <p id='rating'>⭐{8.8}/10</p>
                     <p>Duration: {movieDetails.data.title.runtime.seconds} Sec</p>
-                    <p>Release Year: {movieDetails.data.title.releaseYear.year}</p>
-                    <p>Overview: Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat quis eius libero ea molestiae suscipit ipsa incidunt odio praesentium at.</p>
+                    <p id='release-year'>Release Year: {movieDetails.data.title.releaseYear.year}</p>
+                    <p><h3>Overview:</h3> Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat quis eius libero ea molestiae suscipit ipsa incidunt odio praesentium at.</p>
                 </div>
             </div>
 
             <div className="movie-cast">
                 <h3>Cast</h3>
                 <div className="cast-grid">
-                    <h4>Currently Unavailable</h4>
+                    {
+                        castDetails.map((cast) => (
+                            <Casts cast={cast}/>
+                            // <p>{cast.name} hello</p>
+                        ))
+                    }
                 </div>
             </div>
         </div>

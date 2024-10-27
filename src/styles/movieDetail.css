@@ -1,13 +1,15 @@
 
 .movie-detail-container {
     padding: 20px;
-    color: rgb(255, 255, 255);
+    /* background-color: black; */
+    /* color: rgb(255, 255, 255); */
 }
 
 .movie-detail-header {
     display: flex;
-    background-color: #000000;
+    /* background-color: #b4b4b4; */
     padding: 20px;
+    border: 1px solid black;
     border-radius: 10px;
     margin-bottom: 20px;
 }
@@ -34,10 +36,24 @@
     font-size: 18px;
 }
 
+#rating{
+    color:#f39c12;
+}
+
+#release-year{
+    color: rgb(0, 79, 238);
+}
 .movie-cast {
     margin-top: 30px;
     color: black;
 }
+
+.cast-grid{
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
 
 @media(max-width:700px) {
     .movie-detail-container {

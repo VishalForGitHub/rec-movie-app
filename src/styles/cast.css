@@ -1,0 +1,17 @@
+.cast img{
+    width: 150px;
+    height: 150px;
+    border-radius: 5px;
+}
+
+.cast p{
+   font-size: 14px;
+   color: #2f3ff7;
+}
+
+.cast{
+    width: 150px;
+    padding: 3px;
+    border-radius:2px;
+    margin-bottom: 5px;
+}
