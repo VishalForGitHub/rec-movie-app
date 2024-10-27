@@ -5,9 +5,16 @@ import axios from 'axios';
 import { fetchMovieDetailsById } from '../services/movieService';
 const MovieDetail = () => {
     const { id } = useParams();
+    // id= id.match(/ttd+/)[0];
+
+    // const str = "/title/tt16366836/";
+    console.log(id); // Output: "tt16366836"
+
     const [movieDetails, setMovieDetails] = useState(null);
 
     useEffect(() => {
+
+
         fetchMovieDetailsById(id).
             then((res) => {
                 setMovieDetails(res.data);

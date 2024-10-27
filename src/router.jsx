@@ -4,7 +4,7 @@ import NavBar from './components/NavBar';
 import TopRated from './pages/TopRated';
 import Upcoming from './pages/Upcoming';
 import MovieDetail from './pages/MovieDetail';
-// import SearchResults from './pages/SearchResults';
+import SearchResults from './pages/SearchResults';
 
 const AppRouter = () => {
   return (
@@ -15,7 +15,7 @@ const AppRouter = () => {
         <Route path="/top-rated" element={<TopRated />} />
         <Route path="/upcoming" element={<Upcoming />} />
         <Route path="/movie/:id" element={<MovieDetail />} />
-        {/* <Route path="/search/:query" element={<SearchResults />} /> */}
+        <Route path="/search/:query" element={<SearchResults />} />
       </Routes>
     </Router>
   );
