@@ -6,11 +6,6 @@ import { fetchMovieDetailsById } from '../services/movieService';
 import { getCastDetails } from '../services/movieService';
 const MovieDetail = () => {
     const { id } = useParams();
-    // id= id.match(/ttd+/)[0];
-
-    // const str = "/title/tt16366836/";
-    // console.log(id); // Output: "tt16366836"
-
     const [movieDetails, setMovieDetails] = useState(null);
     const [castDetails, setCastDetails] = useState(null);
     useEffect(() => {
