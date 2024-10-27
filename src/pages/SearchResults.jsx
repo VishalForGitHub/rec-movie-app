@@ -13,7 +13,7 @@ const SearchResults = () => {
           searchMovieByName(query).
            then(response=>{
                  console.log(response.data.results);
-                setMovies(response.data.results.slice(0,2));
+                setMovies(response.data.results.slice(0,4));
            }).
            catch(err=>err)
   }, []);

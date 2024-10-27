@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const API_KEY = '8d6f75e5c3msh26855937d514038p1793a5jsna4e21d4df0da';
+const API_KEY = '2c7a43366dmshbc53fb5cc708817p1a18c5jsn1cc24a6755ee';
 //tani: '2c7a43366dmshbc53fb5cc708817p1a18c5jsn1cc24a6755ee';
 //my: '8d6f75e5c3msh26855937d514038p1793a5jsna4e21d4df0da';
 //shu: 843a6ee35amsh7dd72dd57a3f986p111526jsn01dce883
@@ -11,7 +11,7 @@ export const popular = {
   method: 'GET',
   url: 'https://online-movie-database.p.rapidapi.com/title/v2/get-popular',
   params: {
-    first: '10',
+    first: '15',
     country: 'US',
     language: 'en-US'
   },
@@ -30,7 +30,7 @@ export const topRated = {
   params: {
     searchTerm: 'top rated',
     type: 'NAME',
-    first: '10',
+    first: '15',
     country: 'US',
     language: 'en-US'
   },
@@ -47,7 +47,7 @@ export const upcoming = {
   url: 'https://online-movie-database.p.rapidapi.com/title/v2/get-top-meter',
   params: {
     topMeterTitlesType: 'ALL',
-    first: '10',
+    first: '15',
     country: 'US',
     language: 'en-US'
   },
@@ -113,19 +113,16 @@ export async function getCastDetails(movieId) {
       }
     });
 
-    // Extract cast details: name, character, and image
+
     const castDetails = response.data?.cast?.map(member => ({
       name: member.name,
-      character: member.characters ? member.characters.join(', ') : "N/A", // Join characters if multiple
+      character: member.characters ? member.characters.join(', ') : "N/A",
       image: member.image?.url || "No Image Available"
     }));
 
-    // console.log(castDetails.slice(0,6));
+
     return castDetails;
   } catch (error) {
     console.error("Error fetching cast details:", error);
   }
 }
-
-// Example usage
-// getCastDetails('tt27911000');
