@@ -10,6 +10,7 @@ const Navbar = () => {
     e.preventDefault();
     if (searchTerm.trim()) {
       navigate(`/search/${searchTerm}`);
+      // setSearchTerm('');
     }
   };
 
