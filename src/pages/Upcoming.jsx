@@ -50,7 +50,7 @@ const Upcoming = () => {
                         id={movie.node.id}
                         title={movie.node.originalTitleText.text}
                         poster_path={movie.node.primaryImage.url}
-                        rating={false}
+                        rating={'na'}
                         rank={movie.node.meterRanking.currentRank}
                     />
                 ))}

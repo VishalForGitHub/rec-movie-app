@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const API_KEY = '843a6ee35amsh7dd72dd57a3f986p111526jsn01dce883e4b5';
+const API_KEY = 'd4d7a634b5mshedc6d29cbd2729bp1aded9jsnafc622cba943';
 
 //har: d4d7a634b5mshedc6d29cbd2729bp1aded9jsnafc622cba943
 //shu: 843a6ee35amsh7dd72dd57a3f986p111526jsn01dce883e4b5
