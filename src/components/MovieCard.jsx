@@ -7,7 +7,7 @@ const MovieCard = ({ id, title, poster_path, rating ,rank=false }) => {
 
   return (
     <div className="movie-card">
-      <Link to={`/movie/${id}`}>
+      <Link to={`/movie/${rating}/${id}`}>
         <img
           src={poster_path}
           alt={title}

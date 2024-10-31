@@ -5,7 +5,7 @@ import Casts from '../components/Casts';
 import { fetchMovieDetailsById } from '../services/movieService';
 import { getCastDetails } from '../services/movieService';
 const MovieDetail = () => {
-    const { id } = useParams();
+    const { rating,id } = useParams();
     const [movieDetails, setMovieDetails] = useState(null);
     const [castDetails, setCastDetails] = useState(null);
     useEffect(() => {
@@ -49,7 +49,7 @@ const MovieDetail = () => {
                 />
                 <div className="movie-info">
                     <h2>{movieDetails.data.title.originalTitleText.text}</h2>
-                    <p id='rating'>⭐{8.8}/10</p>
+                    <p id='rating'>⭐{rating}/10</p>
                     <p>Duration: {movieDetails.data.title.runtime.seconds} Sec</p>
                     <p id='release-year'>Release Year: {movieDetails.data.title.releaseYear.year}</p>
                     <p><h3>Overview:</h3> Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat quis eius libero ea molestiae suscipit ipsa incidunt odio praesentium at.</p>
