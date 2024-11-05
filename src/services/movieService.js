@@ -1,7 +1,8 @@
 import axios from 'axios';
 
-const API_KEY = 'd4d7a634b5mshedc6d29cbd2729bp1aded9jsnafc622cba943';
+const API_KEY = '3f3dede1a9msh0c5e9860ac5bfb7p18d5eajsn5d0787b497e1';
 
+//kom: 3f3dede1a9msh0c5e9860ac5bfb7p18d5eajsn5d0787b497e1
 //har: d4d7a634b5mshedc6d29cbd2729bp1aded9jsnafc622cba943
 //shu: 843a6ee35amsh7dd72dd57a3f986p111526jsn01dce883e4b5
 
@@ -11,7 +12,7 @@ export const popular = {
   method: 'GET',
   url: 'https://online-movie-database.p.rapidapi.com/title/v2/get-popular',
   params: {
-    first: '30',
+    first: '50',
     country: 'US',
     language: 'en-US'
   },
@@ -28,7 +29,7 @@ export const topRated = {
   method: 'GET',
   url: 'https://online-movie-database.p.rapidapi.com/title/v2/get-popular',
   params: {
-    first: '60',
+    first: '100',
     country: 'US',
     language: 'en-US'
   },
@@ -45,7 +46,7 @@ export const upcoming = {
   url: 'https://online-movie-database.p.rapidapi.com/title/v2/get-top-meter',
   params: {
     topMeterTitlesType: 'ALL',
-    first: '25',
+    first: '30',
     country: 'US',
     language: 'en-US'
   },

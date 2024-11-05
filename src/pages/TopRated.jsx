@@ -30,7 +30,7 @@ const TopRated = () => {
     useEffect(() => {
         axios.request(topRated)
             .then(response => {
-                setMovies(response.data.data.movies.edges.slice(30,59));
+                setMovies(response.data.data.movies.edges.slice(40,99));
             })
             .catch(error => {
                 console.error("Error fetching popular movies:", error);

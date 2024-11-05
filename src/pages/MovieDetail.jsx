@@ -6,6 +6,7 @@ import { fetchMovieDetailsById } from '../services/movieService';
 import { getCastDetails } from '../services/movieService';
 const MovieDetail = () => {
     const { rating,id } = useParams();
+    // console.log(id,rating);
     const [movieDetails, setMovieDetails] = useState(null);
     const [castDetails, setCastDetails] = useState(null);
     useEffect(() => {
@@ -13,6 +14,7 @@ const MovieDetail = () => {
         const fetchData1 = async () => {
             try {
                 const res = await fetchMovieDetailsById(id);
+                // console.log(res)
                 setMovieDetails(res.data);
             } catch (error) {
                 console.error("Error fetching data1:", error);
@@ -23,7 +25,9 @@ const MovieDetail = () => {
         const fetchData2 = async () => {
             try {
                 const res = await getCastDetails(id);
-                setCastDetails(res.slice(0, 6));
+                // setCastDetails(res.slice(0, 6));
+                // console.log(res);
+                setCastDetails(res);
             } catch (error) {
                 console.error("Error fetching data1:", error);
             }

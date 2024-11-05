@@ -30,7 +30,8 @@ const Upcoming = () => {
     useEffect(() => {
         axios.request(upcoming)
             .then(response => {
-                setMovies(response.data.data.topMeterTitles.edges);
+                setMovies(response.data.data.topMeterTitles.edges.slice(7));
+                // console.log(response.data.data.topMeterTitles.edges);
             })
             .catch(error => {
                 console.error("Error fetching popular movies:", error);
@@ -44,6 +45,7 @@ const Upcoming = () => {
 
     return (
         <div>
+            {/* <h1>upcomming</h1> */}
             <div className="movie-grid">
                 {currentMovies.map(movie => (
                     <MovieCard key={movie.node.id}

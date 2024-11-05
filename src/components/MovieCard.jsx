@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import '../styles/movieCard.css';
 
 const MovieCard = ({ id, title, poster_path, rating ,rank=false }) => {
-  const imageBaseUrl = 'https://image.tmdb.org/t/p/w500';
+  // const imageBaseUrl = 'https://image.tmdb.org/t/p/w500';
 
   return (
     <div className="movie-card">
